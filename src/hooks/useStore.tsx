@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-interface IStore {
+export interface IStore {
   isLoggedIn: boolean;
   setIsLoggedIn: (status: boolean) => void;
 }

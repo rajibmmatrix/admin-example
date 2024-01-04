@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FiHome } from "react-icons/fi";
-import Logo from "../../assets/logo.png";
+import { IMAGES } from "@utils";
 
 function Error() {
   return (
@@ -13,7 +13,7 @@ function Error() {
               to="/"
               aria-label="home"
             >
-              <img src={Logo} alt="logo" className="w-24 h-24" />
+              <img src={IMAGES.Logo} alt="logo" className="w-24 h-24" />
             </Link>
           </nav>
         </header>

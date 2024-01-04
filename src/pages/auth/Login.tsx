@@ -1,6 +1,8 @@
 import { MdError } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
-import Logo from "../../assets/logo.png";
+import { useStore } from "@hooks";
+import { IMAGES } from "@utils";
 
 interface IForm {
   email: string;
@@ -9,6 +11,8 @@ interface IForm {
 }
 
 function Login() {
+  const navigate = useNavigate();
+  const setIsLoggedIn = useStore((state) => state.setIsLoggedIn);
   const {
     register,
     handleSubmit,
@@ -18,6 +22,8 @@ function Login() {
 
   const onSubmit: SubmitHandler<IForm> = (data) => {
     console.log(data);
+    setIsLoggedIn(true);
+    navigate("/");
   };
 
   console.log(watch("email")); // watch input value by passing the name of it
@@ -28,7 +34,7 @@ function Login() {
         <div className="mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
           <div className="p-4 sm:p-7">
             <div className="text-center flex flex-col items-center justify-center">
-              <img src={Logo} alt="logo" className="w-20 h-20" />
+              <img src={IMAGES.Logo} alt="logo" className="w-20 h-20" />
               <h1 className="block text-2xl font-bold mt-2 text-gray-800 dark:text-white">
                 Sign in
               </h1>

@@ -5,8 +5,8 @@ import {
   ErrorPage,
   LoginPage,
   UsersPage,
-} from "../screens";
-import { Layout } from "../components";
+} from "@pages";
+import { Layout } from "@components";
 
 const router = createBrowserRouter([
   {

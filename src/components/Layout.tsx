@@ -1,7 +1,6 @@
 import { Outlet, Navigate } from "react-router-dom";
-import Header from "./Header";
-import Sidebar from "./Sidebar";
-import useStore from "../hooks/useStore";
+import { Header, Sidebar } from "@components";
+import { useStore } from "@hooks";
 
 function Layout() {
   const isLoggedIn = useStore((state) => state.isLoggedIn);
